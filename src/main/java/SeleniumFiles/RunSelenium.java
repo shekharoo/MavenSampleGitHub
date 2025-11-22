@@ -74,6 +74,7 @@ public class RunSelenium{
         Thread.sleep(2000);
         //Click on Campaign button
         driver.findElement(By.xpath("//div[@id='navbarNav']/ul/li[1]/a")).click();
+        Thread.sleep(2000);
         //Click on create Campaign button
         driver.findElement(By.xpath("//button[@class='btn btn-info']")).click();
         //Fill Campaign Name
