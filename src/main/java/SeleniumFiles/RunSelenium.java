@@ -13,7 +13,7 @@ public class RunSelenium {
         WebDriver driver =  new ChromeDriver();
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-        driver.get("http://49.249.28.218:8098/ ");
+        driver.get("http://49.249.28.218:8098/");
         Thread.sleep(1000);
         driver.findElement(By.id("username")).sendKeys("rmgyantra");
         driver.findElement(By.id("inputPassword")).sendKeys("rmgy@9999");
