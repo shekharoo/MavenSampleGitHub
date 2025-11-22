@@ -19,7 +19,7 @@ public class RunSelenium {
         driver.findElement(By.id("inputPassword")).sendKeys("rmgy@9999");
         driver.findElement(By.xpath("//button[@type='submit']")).click();
         System.out.println("Login is Successfull!!");
-        Thread.sleep(1000);
+        Thread.sleep(5000);
         driver.quit();
     }
 }
