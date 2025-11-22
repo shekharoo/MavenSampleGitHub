@@ -4,9 +4,12 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.interactions.Actions;
 
 import java.io.IOException;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Random;
 import java.util.Set;
 
@@ -395,7 +398,22 @@ public class RunSelenium{
     }
 
     public static void main(String[] args) throws InterruptedException, IOException {
-        WebDriver driver = new ChromeDriver();
+        // Create ChromeOptions object
+        ChromeOptions options = new ChromeOptions();
+
+        // Create a HashMap to store user profile preferences
+        Map<String, Object> prefs = new HashMap<>();
+
+        // Disable the "Change your password" pop-up related to password leak detection
+        prefs.put("profile.password_manager_leak_detection", false);
+
+        // Optionally, disable saving passwords and password manager entirely
+        prefs.put("credentials_enable_service", false);
+        prefs.put("profile.password_manager_enabled", false);
+
+        // Apply the preferences to ChromeOptions
+        options.setExperimentalOption("prefs", prefs);
+        WebDriver driver = new ChromeDriver(options);
         driver.manage().window().maximize();
         RunSelenium.ninzaTC01CreateCampaign(driver);
         //RunSelenium.ninzaTC02SearchByCampaignID(driver);
