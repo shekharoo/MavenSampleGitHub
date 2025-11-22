@@ -21,5 +21,6 @@ public class RunSelenium {
         System.out.println("Login is Successfull!!");
         Thread.sleep(5000);
         driver.quit();
+        System.out.println("Browser is closed suceessfully!!");
     }
 }
