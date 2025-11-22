@@ -14,6 +14,39 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
+    <!--
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>exec-maven-plugin</artifactId>
+                <version>3.0.0</version>
+                <configuration>
+                    <mainClass>SeleniumFiles.RunSelenium</mainClass>
+            </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+-->
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>exec-maven-plugin</artifactId>
+                <version>3.0.0</version> <!-- Use a recent version -->
+                <configuration>
+                    <mainClass>SeleniumFiles.RunSelenium</mainClass>
+                    <!-- Optional: Pass arguments to your main method -->
+                    <!-- <arguments>
+                        <argument>arg1</argument>
+                        <argument>arg2</argument>
+                    </arguments> -->
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
     <dependencies>
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
